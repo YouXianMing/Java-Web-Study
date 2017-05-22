@@ -2,27 +2,34 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>Servlet-Filter</display-name>
   <filter>
-    <filter-name>uri-filter</filter-name>
-    <filter-class>com.filters.URIFilter</filter-class>
+    <filter-name>normalDoFilter</filter-name>
+    <filter-class>com.filters.NormalDoFilter</filter-class>
   </filter>
   <filter>
-    <filter-name>normal-filter</filter-name>
-    <filter-class>com.filters.NormalFilter</filter-class>
+    <filter-name>helloWorldDoFilter</filter-name>
+    <filter-class>com.filters.HelloWorldDoFilter</filter-class>
   </filter>
   <filter-mapping>
-    <filter-name>uri-filter</filter-name>
+    <filter-name>normalDoFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
   <filter-mapping>
-    <filter-name>normal-filter</filter-name>
+    <filter-name>helloWorldDoFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
   <servlet>
-  	<servlet-name>manager</servlet-name>
-  	<servlet-class>com.servlets.ManagerServlet</servlet-class>
-  </servlet>
+  	<servlet-name>helloWorldServlet</servlet-name>
+  	<servlet-class>com.servlets.HelloWorldDoServlet</servlet-class>
+  </servlet><servlet>
+  	<servlet-name>otherDoServlet</servlet-name>
+  	<servlet-class>com.servlets.OtherDoServlet</servlet-class>
+</servlet>
   <servlet-mapping>
-  	<servlet-name>manager</servlet-name>
-  	<url-pattern>/manager</url-pattern>
+  	<servlet-name>helloWorldServlet</servlet-name>
+  	<url-pattern>/HelloWorldDoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>otherDoServlet</servlet-name>
+  	<url-pattern>/OtherDoServlet</url-pattern>
   </servlet-mapping>
 </web-app>
