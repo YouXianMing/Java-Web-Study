@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+    <display-name>Servlet-Filter-UrlPattern</display-name>
+
+    <!-- error-page -->
+    <error-page>
+        <location>/WEB-INF/404.html</location>
+    </error-page>
+
+    <!-- filter -->
+    <filter>
+        <filter-name>FirstFilter</filter-name>
+        <filter-class>com.filters.FirstFilter</filter-class>
+    </filter>
+
+    <filter>
+        <filter-name>SecondFilter</filter-name>
+        <filter-class>com.filters.SecondFilter</filter-class>
+    </filter>
+
+    <filter>
+        <filter-name>ThirdFilter</filter-name>
+        <filter-class>com.filters.ThirdFilter</filter-class>
+    </filter>
+
+    <!-- filter-mapping -->
+    <filter-mapping>
+        <filter-name>FirstFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>SecondFilter</filter-name>
+        <url-pattern>*.jsp</url-pattern>
+        <url-pattern>*.html</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>ThirdFilter</filter-name>
+        <url-pattern>/do/*</url-pattern>
+    </filter-mapping>
+
+</web-app>
