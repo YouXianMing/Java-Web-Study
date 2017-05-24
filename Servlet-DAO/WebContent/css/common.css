@@ -1,0 +1,73 @@
+.main-content {
+    margin: 20px auto;
+    width: 900px;
+}
+
+.main-table {
+    border-style: solid;
+    border-width: thin;
+    width: inherit;
+}
+
+.main-table-title {
+    line-height: 50px;
+    font-size: 1.1rem;
+    text-align: left;
+    text-indent: 20px;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+}
+
+h1 {
+    line-height: 60px;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 300;
+}
+
+.main-table-content a {
+    display: block;
+}
+
+.main-table-content {
+    line-height: 40px;
+    font-size: 1.0rem;
+    text-align: left;
+    text-indent: 20px;
+    border-bottom-style: dashed;
+    border-bottom-width: thin;
+}
+
+.main-content>a {
+    display: inline-block;
+    padding-top: 15px;
+    line-height: 2rem;
+}
+
+.insertUser-form {
+    border-style: solid;
+    border-width: thin;
+    display: inline-block;
+    border-color: RGBA(1, 1, 1, 0.1);
+}
+
+.insertUser-form>input {
+    width: 400px;
+    line-height: 30px;
+}
+
+.insertUser-form div span {
+    display: inline-block;
+    width: 100px;
+    line-height: 30px;
+    text-indent: 20px;
+}
+
+.insertUser-form div input {
+    border-style: none;
+    display: inline-block;
+    width: 300px;
+    line-height: 30px;
+    text-indent: 20px;
+    background-color: RGBA(1, 1, 1, 0.1);
+}
