@@ -21,6 +21,7 @@ public class ContextListener implements ServletContextListener {
 
 	private void libInit(ServletContextEvent sce) {
 
+		// 数据库连接池基本配置
 		HashMap<String, String> map = new HashMap<>();
 		map.put("url", new String(new StringBuffer(sce.getServletContext().getInitParameter("url"))
 				.append("?useUnicode=true&characterEncoding=utf-8&useSSL=false")));

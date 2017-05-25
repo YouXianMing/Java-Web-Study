@@ -29,26 +29,34 @@
   </listener>
   <servlet>
     <servlet-name>InsertUserServlet</servlet-name>
-    <servlet-class>com.servlets.InsertUserServlet</servlet-class>
-  </servlet><servlet>
-  	<servlet-name>editUser</servlet-name>
-  	<servlet-class>com.servlets.EditUserServlet</servlet-class>
-</servlet>
+    <servlet-class>com.servlets.InsertUserResultServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>editUserResult</servlet-name>
+    <servlet-class>com.servlets.EditUserResultServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>editUser</servlet-name>
+    <servlet-class>com.servlets.EditUserServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>InsertUserServlet</servlet-name>
     <url-pattern>/user/insertUser.do</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>editUser</servlet-name>
-  	<url-pattern>/user/editUser.do</url-pattern>
-  </servlet-mapping><filter>
-    <filter-name>EditUserFilter</filter-name>
-    <filter-class>com.filters.EditUserFilter</filter-class>
+    <servlet-name>editUserResult</servlet-name>
+    <url-pattern>/user/editUser.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>editUser</servlet-name>
+    <url-pattern>/user/edit.do</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>EntranceFilter</filter-name>
+    <filter-class>com.filters.EntranceFilter</filter-class>
   </filter>
   <filter-mapping>
-    <filter-name>EditUserFilter</filter-name>
-    <url-pattern>/user/edit.jsp</url-pattern>
+    <filter-name>EntranceFilter</filter-name>
+    <url-pattern>/*</url-pattern>
   </filter-mapping>
-  
-  
 </web-app>

@@ -36,7 +36,7 @@
 
 				for (User u : list) {
 					String str = String.format(
-							"<tr class=\"main-table-content\"><td><a href=\"./edit.jsp?id=%d\">%d</a></td><td>%s</td><td>%d</td><td>%d</td></tr>",
+							"<tr class=\"main-table-content\"><td><a href=\"./edit.do?id=%d\">%d</a></td><td>%s</td><td>%d</td><td>%d</td></tr>",
 							u.getId(), u.getId(), u.getName(), u.getTel(), u.getPasswd());
 					out.append(str);
 				}

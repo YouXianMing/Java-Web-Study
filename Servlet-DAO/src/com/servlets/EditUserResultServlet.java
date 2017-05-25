@@ -2,6 +2,7 @@ package com.servlets;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.dao.UserDaoImpl;
 import com.models.User;
 
-public class InsertUserServlet extends HttpServlet {
+public class EditUserResultServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -20,33 +21,18 @@ public class InsertUserServlet extends HttpServlet {
 		String tel = request.getParameter("tel");
 		String passwd = request.getParameter("passwd");
 		
-		if (id.length() <= 0) {
-			
-			request.setAttribute("error", "id不能为空!");
-			request.getRequestDispatcher("insert_error.jsp").forward(request, response);
-			return;
-		}
-		
-		if (name.length() <= 0) {
-			
-			request.setAttribute("error", "用户名不能为空!");
-			request.getRequestDispatcher("insert_error.jsp").forward(request, response);
-			return;
-		}
-		
-		// 创建用户
 		User user = new User();
 		user.setId(Integer.parseInt(id));
 		user.setName(name);
 		user.setTel(Integer.parseInt(tel));
 		user.setPasswd(Integer.parseInt(passwd));
 		
-		// 插入数据库
+		// 更新数据库
 		UserDaoImpl impl = new UserDaoImpl();
-		impl.insertUser(user);
+		impl.updateUser(user);
 		
 		// 转发到insert_success.jsp中
-		request.getRequestDispatcher("insert_success.jsp").forward(request, response);
+		request.getRequestDispatcher("edit_success.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -54,5 +40,4 @@ public class InsertUserServlet extends HttpServlet {
 
 		doGet(request, response);
 	}
-
 }

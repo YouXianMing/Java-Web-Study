@@ -6,18 +6,19 @@ import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
 
-import com.dao.UserDaoImpl;
-import com.models.User;
-
-public class EditUserFilter implements Filter {
+public class EntranceFilter implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 
-		UserDaoImpl impl = new UserDaoImpl();
-		User user = impl.findById(Integer.parseInt(request.getParameter("id")));
-		request.setAttribute("user", user);
+		if (request instanceof HttpServletRequest) {
+		
+			HttpServletRequest req = (HttpServletRequest) request;
+			System.out.println(req.getRequestURI());
+		}
+		
 		chain.doFilter(request, response);
 	}
 }

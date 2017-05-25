@@ -11,6 +11,7 @@ public class UserDaoImpl extends NormalDao implements UserDao {
 	final static String INSERT = "INSERT INTO tb_user (id,name,tel,passwd) VALUES(?,?,?,?);";
 	final static String FIND_BY_ID = "SELECT * FROM tb_user where id=?;";
 	final static String UPDATE = "UPDATE tb_user SET name=?, tel=?, passwd=? WHERE id=?;";
+	final static String DELETE = "DELETE FROM tb_user WHERE id=?;";
 
 	@Override
 	public boolean delete(int id) {
@@ -19,7 +20,7 @@ public class UserDaoImpl extends NormalDao implements UserDao {
 		PreparedStatement preparedStatement = null;
 		try {
 			connection = getConnection();
-			preparedStatement = connection.prepareStatement("DELETE FROM tb_user WHERE id=?;");
+			preparedStatement = connection.prepareStatement(DELETE);
 			preparedStatement.setInt(1, id);
 			preparedStatement.executeUpdate();
 
